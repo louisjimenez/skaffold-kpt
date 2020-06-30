@@ -1,0 +1,21 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: skaffold-kpt
+upstream:
+  type: git
+  git:
+    commit: a3a51e4f6ef38680968b3d3f6c530f976853e2aa
+    repo: https://github.com/louisjimenez/skaffold-kpt
+    directory: /
+    ref: master
+openAPI:
+  definitions:
+    io.k8s.cli.setters.replicas:
+      description: leeroy-app replicas
+      maximum: 10
+      type: integer
+      x-k8s-cli:
+        setter:
+          name: replicas
+          value: "5"
