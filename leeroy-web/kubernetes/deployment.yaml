@@ -15,7 +15,7 @@ spec:
         app: leeroy-web
     spec:
       containers:
-        - name: leeroy-web
-          image: leeroy-web
-          ports:
-            - containerPort: 8080
+      - name: leeroy-web
+        image: leeroy-web
+        ports:
+        - containerPort: 8080
